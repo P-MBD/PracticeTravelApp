@@ -1,10 +1,15 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Text, View, Image } from "react-native";
-import { ProgressBarAndroidComponent } from "../../../node_modules/react-native/types/index";
 import styles from "./styles";
 
 const Title = ({text}) => {
     const [stateText, setText] = useState('Default state');
+
+    useEffect(()=>{
+      console.log('HELLO USEEFFECT');
+      setText(text);
+    },[text]);
+
     const onTextPress =() => {
         setText('Updated state');
     }
