@@ -1,14 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import {Text, View, Image } from "react-native";
+import { ProgressBarAndroidComponent } from "../../../node_modules/react-native/types/index";
 import styles from "./styles";
 
-const Title = (props) => {
+const Title = ({text}) => {
+    const [stateText, setText] = useState('Default state');
+    const onTextPress =() => {
+        setText('Updated state');
+    }
     return (
-        <View  style={styles.content}>
-          <Image source={props.uri} style={styles.image}/>
-          <Text>{props.title}</Text>
-          <Text>{props.description}</Text>
-          <Text>{props.price}</Text>
+        <View>
+          <Text onPress={onTextPress} style={styles.title}>{stateText}</Text>
+         
         </View>
       );
 }
