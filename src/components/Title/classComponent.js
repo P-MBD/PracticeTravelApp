@@ -2,7 +2,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import styles from './styles';
 
-class Title extends React.Component {
+class Title extends React.PureComponent {
     
     constructor(props){
         super(props);

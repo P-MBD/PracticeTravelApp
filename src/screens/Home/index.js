@@ -9,6 +9,7 @@ const Home = () => {
             setTitle('Updated prop text');
         },3000);
     },[]);
+    console.log('title:>>', title);
     return (
         <SafeAreaView>
              <View>
@@ -17,4 +18,4 @@ const Home = () => {
               </View>
         </SafeAreaView>
     );};
-export default Home;
+export React.memo(Home);

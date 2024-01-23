@@ -1,15 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import {Text, View, Image } from "react-native";
 import styles from "./styles";
 
 const Title = ({text}) => {
     const [stateText, setText] = useState('Default state');
-
-    useEffect(()=>{
-      console.log('HELLO USEEFFECT');
-      setText(text);
-    },[text]);
-
+    console.log('UPDATE');
+   
     const onTextPress =() => {
         setText('Updated state');
     }
@@ -20,7 +16,7 @@ const Title = ({text}) => {
         </View>
       );
 }
-export default Title;
+export default React.memo(Title);
 // const Title = ({text}) => {
 //     console.log('text:>>', text);
 //     return(
